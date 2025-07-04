@@ -29,8 +29,11 @@ jobs:
           composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
           npm install
 
-      - name: Run Pint
-        run: vendor/bin/pint
+      - name: Format Laravel
+        run: composer format
+
+      - name: Lint Laravel
+        run: composer ci
 
       - name: Format Frontend
         run: npm run format
