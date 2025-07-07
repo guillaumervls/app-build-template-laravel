@@ -32,8 +32,11 @@ jobs:
       - name: Build assets
         run: npm run build
 
-      - name: Run Pint
-        run: vendor/bin/pint
+      - name: Format Laravel
+        run: composer format
+
+      - name: Lint Laravel
+        run: composer ci
 
       - name: Format Frontend
         run: npm run format
